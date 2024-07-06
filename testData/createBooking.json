@@ -1,0 +1,120 @@
+{
+  "positive": [
+    {
+      "endpoint": "/booking",
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "params": {
+          "firstname" : "Dipankar",
+          "lastname" : "B",
+          "totalprice" : 111,
+          "depositpaid" : true,
+          "bookingdates" : {
+              "checkin" : "2018-01-01",
+              "checkout" : "2019-01-01"
+          },
+          "additionalneeds" : "Dinner"
+      },
+      "expected_status": 200,
+      "expected_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "properties": {
+            "firstname": {
+              "type": "string"
+            },
+            "lastname": {
+              "type": "string"
+            },
+            "totalprice": {
+              "type": "integer"
+            },
+            "depositpaid": {
+              "type": "boolean"
+            },
+            "bookingdates": {
+              "type": "object",
+              "properties": {
+                "checkin": {
+                  "type": "string"
+                },
+                "checkout": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "checkin",
+                "checkout"
+              ]
+            },
+            "additionalneeds": {
+              "type": "string"
+            }
+          }
+        }
+
+    }
+  ],
+  "negative": [
+    {
+      "endpoint": "/booking",
+      "method": "POST",
+      "params": {
+          "depositpaid" : true,
+          "bookingdates" : {
+              "checkin" : "2018-01-01",
+              "checkout" : "2019-01-01"
+          },
+          "additionalneeds" : "Dinner"
+      },
+      "expected_status": 400,
+      "expected_schema": {
+        "error": "string",
+        "message": "string"
+      }
+    },
+    {
+      "endpoint": "/booking",
+      "method": "POST",
+      "params": {
+        "depositpaid" : true,
+          "bookingdates" : {
+              "checkin" : "2018-01-01",
+              "checkout" : "2019-01-01"
+          },
+          "additionalneeds" : "Dinner"
+      },
+      "expected_status": 400,
+      "expected_schema": {
+        "error": "string",
+        "message": "string"
+      }
+    },
+    {
+      "endpoint": "/booking",
+      "method": "POST",
+      "params": {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "password": "short"
+      },
+      "expected_status": 400,
+      "expected_schema": {
+        "error": "string",
+        "message": "string"
+      }
+    },
+    {
+      "endpoint": "/booking",
+      "method": "POST",
+      "params": {},
+      "expected_status": 400,
+      "expected_schema": {
+        "error": "string",
+        "message": "string"
+      }
+    }
+  ]
+}

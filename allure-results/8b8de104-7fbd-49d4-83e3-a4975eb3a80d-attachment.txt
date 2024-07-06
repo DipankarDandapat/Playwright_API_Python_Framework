@@ -1,0 +1,5 @@
+[32mINFO    [0m <module>:api_actions.py:67 Performing POST request to https://restful-booker.herokuapp.com/auth with payload: {'username': '', 'password': ''} and headers: {'Content-Type': 'application/json'}
+[32mINFO    [0m <module>:api_utilities.py:14 API executed successfully and the response code: 200
+[32mINFO    [0m <module>:api_validations.py:18 Expected response code: 200 is matches the actual code: 200
+[32mINFO    [0m <module>:api_utilities.py:27 API executed successfully and the response data is {'reason': 'Bad credentials'}
+[32mINFO    [0m <module>:api_validations.py:73 Schema validation passed.

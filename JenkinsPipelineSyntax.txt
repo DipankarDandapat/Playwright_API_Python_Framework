@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    environment {
+        BASE_URL = ''
+    }
+
+    parameters {
+        choice(name: 'ENV', choices: ['staging', 'production'], description: 'Choose the environment to deploy to')
+    }
+
+    stages {
+        stage('Set Environment Variables') {
+            steps {
+                script {
+                    if (params.ENV == 'staging') {
+                        env.BASE_URL = 'https://restful-booker.herokuapp.com'
+                    } else if (params.ENV == 'production') {
+                        env.BASE_URL = 'https://restful-booker.herokuapp.com'
+                    }
+                }
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                sh 'pip install -r requirements.txt'
+            }
+        }
+        stage('Run Tests') {
+            steps {
+                sh 'pytest'
+            }
+        }
+    }
+}

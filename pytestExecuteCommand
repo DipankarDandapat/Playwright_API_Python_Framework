@@ -1,0 +1,5 @@
+pytest testcases\ -s -v --cache-clear
+
+pytest -m "Regression or Smoke or Positive"
+
+allure serve allure-results

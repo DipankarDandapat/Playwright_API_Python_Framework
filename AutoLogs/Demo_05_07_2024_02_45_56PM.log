@@ -1,0 +1,91 @@
+05_07_2024 02:45:56 PM - file_reader - <module> - INFO: Resolved file path: D:\Playwright_API_Python_Framework\testData\createAuth.json
+05_07_2024 02:45:56 PM - file_reader - <module> - INFO: Reading file from path: D:\Playwright_API_Python_Framework\testData\createAuth.json
+05_07_2024 02:45:56 PM - file_reader - <module> - INFO: Successfully read data from file: createAuth.json
+05_07_2024 02:45:56 PM - file_reader - <module> - INFO: Resolved file path: D:\Playwright_API_Python_Framework\testData\createBooking.json
+05_07_2024 02:45:56 PM - file_reader - <module> - INFO: Reading file from path: D:\Playwright_API_Python_Framework\testData\createBooking.json
+05_07_2024 02:45:56 PM - file_reader - <module> - INFO: Successfully read data from file: createBooking.json
+05_07_2024 02:45:57 PM - file_reader - <module> - INFO: Resolved file path: D:\Playwright_API_Python_Framework\testData\updateBooking.json
+05_07_2024 02:45:57 PM - file_reader - <module> - INFO: Reading file from path: D:\Playwright_API_Python_Framework\testData\updateBooking.json
+05_07_2024 02:45:57 PM - file_reader - <module> - INFO: Successfully read data from file: updateBooking.json
+05_07_2024 02:45:57 PM - file_reader - <module> - INFO: Resolved file path: D:\Playwright_API_Python_Framework\testData\getBookingByID.json
+05_07_2024 02:45:57 PM - file_reader - <module> - INFO: Reading file from path: D:\Playwright_API_Python_Framework\testData\getBookingByID.json
+05_07_2024 02:45:57 PM - file_reader - <module> - INFO: Successfully read data from file: getBookingByID.json
+05_07_2024 02:45:57 PM - file_reader - <module> - INFO: Resolved file path: D:\Playwright_API_Python_Framework\testData\deleteBookingByID.json
+05_07_2024 02:45:57 PM - file_reader - <module> - INFO: Reading file from path: D:\Playwright_API_Python_Framework\testData\deleteBookingByID.json
+05_07_2024 02:45:57 PM - file_reader - <module> - INFO: Successfully read data from file: deleteBookingByID.json
+05_07_2024 02:45:57 PM - conftest - <module> - INFO: testcase start now .....
+05_07_2024 02:45:57 PM - test_1_auth - <module> - INFO: testcase start now .....
+05_07_2024 02:45:57 PM - api_actions - <module> - INFO: Performing POST request to https://restful-booker.herokuapp.com/auth with payload: {'username': 'admin', 'password': 'password123'} and headers: {'Content-Type': 'application/json'}
+05_07_2024 02:45:58 PM - api_utilities - <module> - INFO: API executed successfully and the response code: 200
+05_07_2024 02:45:58 PM - api_validations - <module> - INFO: Expected response code: 200 is matches the actual code: 200
+05_07_2024 02:45:58 PM - api_utilities - <module> - INFO: API executed successfully and the response data is {'token': '385060d61bdff29'}
+05_07_2024 02:45:58 PM - api_validations - <module> - INFO: Schema validation passed.
+05_07_2024 02:45:58 PM - api_utilities - <module> - INFO: API executed successfully and the response data is {'token': '385060d61bdff29'}
+05_07_2024 02:45:58 PM - api_utilities - <module> - INFO: API executed successfully and the response value in token is 385060d61bdff29
+05_07_2024 02:45:58 PM - Shared_API_Data - <module> - INFO: Setting data for key: token_id with value: 385060d61bdff29
+05_07_2024 02:45:58 PM - Shared_API_Data - <module> - INFO: Current data state: {'token_id': '385060d61bdff29'}
+05_07_2024 02:45:58 PM - api_actions - <module> - INFO: Performing POST request to https://restful-booker.herokuapp.com/booking with payload: {'firstname': 'Samantha', 'lastname': 'Green', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Dinner'} and headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer '}
+05_07_2024 02:45:59 PM - api_utilities - <module> - INFO: API executed successfully and the response code: 200
+05_07_2024 02:45:59 PM - api_validations - <module> - INFO: Expected response code: 200 is matches the actual code: 200
+05_07_2024 02:45:59 PM - api_utilities - <module> - INFO: API executed successfully and the response data is {'bookingid': 2126, 'booking': {'firstname': 'Samantha', 'lastname': 'Green', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Dinner'}}
+05_07_2024 02:45:59 PM - api_utilities - <module> - INFO: API executed successfully and the response value in booking.firstname is Samantha
+05_07_2024 02:45:59 PM - api_validations - <module> - INFO: Samantha is present in the response
+05_07_2024 02:45:59 PM - api_utilities - <module> - INFO: API executed successfully and the response data is {'bookingid': 2126, 'booking': {'firstname': 'Samantha', 'lastname': 'Green', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Dinner'}}
+05_07_2024 02:45:59 PM - api_utilities - <module> - INFO: API executed successfully and the response value in booking.lastname is Green
+05_07_2024 02:45:59 PM - api_validations - <module> - INFO: Green is present in the response
+05_07_2024 02:45:59 PM - api_utilities - <module> - INFO: API executed successfully and the response data is {'bookingid': 2126, 'booking': {'firstname': 'Samantha', 'lastname': 'Green', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Dinner'}}
+05_07_2024 02:45:59 PM - api_validations - <module> - INFO: Schema validation passed.
+05_07_2024 02:45:59 PM - api_utilities - <module> - INFO: API executed successfully and the response data is {'bookingid': 2126, 'booking': {'firstname': 'Samantha', 'lastname': 'Green', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Dinner'}}
+05_07_2024 02:45:59 PM - api_utilities - <module> - INFO: API executed successfully and the response value in bookingid is 2126
+05_07_2024 02:45:59 PM - Shared_API_Data - <module> - INFO: Setting data for key: booking_id with value: 2126
+05_07_2024 02:45:59 PM - Shared_API_Data - <module> - INFO: Current data state: {'token_id': '385060d61bdff29', 'booking_id': 2126}
+05_07_2024 02:45:59 PM - Shared_API_Data - <module> - INFO: Setting data for key: first_name with value: Brandon
+05_07_2024 02:45:59 PM - Shared_API_Data - <module> - INFO: Current data state: {'token_id': '385060d61bdff29', 'booking_id': 2126, 'first_name': 'Brandon'}
+05_07_2024 02:45:59 PM - Shared_API_Data - <module> - INFO: Setting data for key: last_name with value: Brown
+05_07_2024 02:45:59 PM - Shared_API_Data - <module> - INFO: Current data state: {'token_id': '385060d61bdff29', 'booking_id': 2126, 'first_name': 'Brandon', 'last_name': 'Brown'}
+05_07_2024 02:45:59 PM - Shared_API_Data - <module> - INFO: Setting data for key: totalprice with value: 111
+05_07_2024 02:45:59 PM - Shared_API_Data - <module> - INFO: Current data state: {'token_id': '385060d61bdff29', 'booking_id': 2126, 'first_name': 'Brandon', 'last_name': 'Brown', 'totalprice': 111}
+05_07_2024 02:45:59 PM - Shared_API_Data - <module> - INFO: Setting data for key: additionalneeds with value: Dinner
+05_07_2024 02:45:59 PM - Shared_API_Data - <module> - INFO: Current data state: {'token_id': '385060d61bdff29', 'booking_id': 2126, 'first_name': 'Brandon', 'last_name': 'Brown', 'totalprice': 111, 'additionalneeds': 'Dinner'}
+05_07_2024 02:45:59 PM - Shared_API_Data - <module> - INFO: Retrieved data for key: token_id with value: 385060d61bdff29
+05_07_2024 02:45:59 PM - Shared_API_Data - <module> - INFO: Retrieved data for key: booking_id with value: 2126
+05_07_2024 02:45:59 PM - api_actions - <module> - INFO: Performing PUT request to https://restful-booker.herokuapp.com/booking/2126 with payload: {'firstname': 'Brandon', 'lastname': 'Brown', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Dinner'} and headers: {'Content-Type': 'application/json', 'Cookie': 'token=385060d61bdff29'}
+05_07_2024 02:46:00 PM - api_utilities - <module> - INFO: API executed successfully and the response code: 200
+05_07_2024 02:46:00 PM - api_validations - <module> - INFO: Expected response code: 200 is matches the actual code: 200
+05_07_2024 02:46:00 PM - api_utilities - <module> - INFO: API executed successfully and the response data is {'firstname': 'Brandon', 'lastname': 'Brown', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Dinner'}
+05_07_2024 02:46:00 PM - api_utilities - <module> - INFO: API executed successfully and the response value in firstname is Brandon
+05_07_2024 02:46:00 PM - api_validations - <module> - INFO: Brandon is present in the response
+05_07_2024 02:46:00 PM - api_utilities - <module> - INFO: API executed successfully and the response data is {'firstname': 'Brandon', 'lastname': 'Brown', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Dinner'}
+05_07_2024 02:46:00 PM - api_utilities - <module> - INFO: API executed successfully and the response value in lastname is Brown
+05_07_2024 02:46:00 PM - api_validations - <module> - INFO: Brown is present in the response
+05_07_2024 02:46:00 PM - api_utilities - <module> - INFO: API executed successfully and the response data is {'firstname': 'Brandon', 'lastname': 'Brown', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Dinner'}
+05_07_2024 02:46:00 PM - api_validations - <module> - INFO: Schema validation passed.
+05_07_2024 02:46:00 PM - Shared_API_Data - <module> - INFO: Retrieved data for key: booking_id with value: 2126
+05_07_2024 02:46:00 PM - api_actions - <module> - INFO: Performing GET request to https://restful-booker.herokuapp.com/booking/2126 with query_params: None and headers: {'Content-Type': 'application/json'}
+05_07_2024 02:46:01 PM - api_utilities - <module> - INFO: API executed successfully and the response code: 200
+05_07_2024 02:46:01 PM - api_validations - <module> - INFO: Expected response code: 200 is matches the actual code: 200
+05_07_2024 02:46:01 PM - Shared_API_Data - <module> - INFO: Retrieved data for key: first_name with value: Brandon
+05_07_2024 02:46:01 PM - api_utilities - <module> - INFO: API executed successfully and the response data is {'firstname': 'Brandon', 'lastname': 'Brown', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Dinner'}
+05_07_2024 02:46:01 PM - api_utilities - <module> - INFO: API executed successfully and the response value in firstname is Brandon
+05_07_2024 02:46:01 PM - api_validations - <module> - INFO: Brandon is present in the response
+05_07_2024 02:46:01 PM - Shared_API_Data - <module> - INFO: Retrieved data for key: last_name with value: Brown
+05_07_2024 02:46:01 PM - api_utilities - <module> - INFO: API executed successfully and the response data is {'firstname': 'Brandon', 'lastname': 'Brown', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Dinner'}
+05_07_2024 02:46:01 PM - api_utilities - <module> - INFO: API executed successfully and the response value in lastname is Brown
+05_07_2024 02:46:01 PM - api_validations - <module> - INFO: Brown is present in the response
+05_07_2024 02:46:01 PM - Shared_API_Data - <module> - INFO: Retrieved data for key: totalprice with value: 111
+05_07_2024 02:46:01 PM - api_utilities - <module> - INFO: API executed successfully and the response data is {'firstname': 'Brandon', 'lastname': 'Brown', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Dinner'}
+05_07_2024 02:46:01 PM - api_utilities - <module> - INFO: API executed successfully and the response value in totalprice is 111
+05_07_2024 02:46:01 PM - api_validations - <module> - INFO: 111 is present in the response
+05_07_2024 02:46:01 PM - Shared_API_Data - <module> - INFO: Retrieved data for key: additionalneeds with value: Dinner
+05_07_2024 02:46:01 PM - api_utilities - <module> - INFO: API executed successfully and the response data is {'firstname': 'Brandon', 'lastname': 'Brown', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Dinner'}
+05_07_2024 02:46:01 PM - api_utilities - <module> - INFO: API executed successfully and the response value in additionalneeds is Dinner
+05_07_2024 02:46:01 PM - api_validations - <module> - INFO: Dinner is present in the response
+05_07_2024 02:46:01 PM - api_utilities - <module> - INFO: API executed successfully and the response data is {'firstname': 'Brandon', 'lastname': 'Brown', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2018-01-01', 'checkout': '2019-01-01'}, 'additionalneeds': 'Dinner'}
+05_07_2024 02:46:01 PM - api_validations - <module> - INFO: Schema validation passed.
+05_07_2024 02:46:01 PM - Shared_API_Data - <module> - INFO: Retrieved data for key: booking_id with value: 2126
+05_07_2024 02:46:01 PM - Shared_API_Data - <module> - INFO: Retrieved data for key: token_id with value: 385060d61bdff29
+05_07_2024 02:46:01 PM - Shared_API_Data - <module> - INFO: Retrieved data for key: booking_id with value: 2126
+05_07_2024 02:46:01 PM - api_actions - <module> - INFO: Performing PATCH request to https://restful-booker.herokuapp.com/booking/2126 with payload: None and headers: {'Content-Type': 'application/json', 'Cookie': 'token=385060d61bdff29'}
+05_07_2024 02:46:02 PM - api_utilities - <module> - INFO: API executed successfully and the response code: 201
+05_07_2024 02:46:02 PM - api_validations - <module> - INFO: Expected response code: 201 is matches the actual code: 201
+05_07_2024 02:46:02 PM - conftest - <module> - INFO: testcase End now .....

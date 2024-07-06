@@ -1,0 +1,123 @@
+{
+  "positive": [
+    {
+      "endpoint": "/auth",
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "params": {
+          "username" : "admin",
+          "password" : "password123"
+      },
+      "expected_schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "token"
+        ]
+      },
+     "expected_status": 200
+    }
+  ],
+  "negative": [
+    {
+      "endpoint": "/auth",
+      "method": "POST",
+      "params": {
+          "username" : "Dipankar",
+          "password" : "Dipankar"
+      },
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "expected_status": 200,
+      "expected_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "properties": {
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "reason"
+          ]
+        }
+    },
+    {
+      "endpoint": "/auth",
+      "method": "POST",
+      "params": {
+        "username" : "Dipankar",
+        "password" : ""
+      },
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "expected_status": 200,
+      "expected_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "properties": {
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "reason"
+          ]
+        }
+    },
+    {
+      "endpoint": "/auth",
+      "method": "POST",
+      "params": {
+        "username" : "",
+        "password" : ""
+      },
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "expected_status": 200,
+      "expected_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "properties": {
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "reason"
+          ]
+        }
+    },
+    {
+      "endpoint": "/auth",
+      "method": "POST",
+      "params": {},
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "expected_status": 200,
+      "expected_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "properties": {
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "reason"
+          ]
+        }
+    }
+  ]
+}

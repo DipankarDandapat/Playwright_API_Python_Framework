@@ -1,0 +1,2 @@
+[32mINFO    [0m <module>:api_actions.py:67 Performing POST request to https://restful-booker.herokuapp.com/booking with payload: {'username': 'Dipankar', 'password': 'Dipankar'} and headers: {'Content-Type': 'application/json'}
+[32mINFO    [0m <module>:api_utilities.py:14 API executed successfully and the response code: 500

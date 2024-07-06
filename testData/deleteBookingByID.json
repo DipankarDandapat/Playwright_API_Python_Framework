@@ -1,0 +1,44 @@
+{
+  "positive": [
+    {
+      "endpoint": "/booking",
+      "method": "Delete",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "expected_status": 201
+
+    }
+  ],
+  "negative": [
+    {
+      "endpoint": "/booking",
+      "method": "Delete",
+      "expected_status": 400,
+      "expected_schema": {
+        "error": "string",
+        "message": "string"
+      }
+    },
+    {
+      "endpoint": "/booking",
+      "method": "Delete",
+      "expected_status": 400
+    },
+    {
+      "endpoint": "/booking",
+      "method": "Delete",
+      "expected_status": 400
+    },
+    {
+      "endpoint": "/booking",
+      "method": "Delete",
+      "params": {},
+      "expected_status": 400,
+      "expected_schema": {
+        "error": "string",
+        "message": "string"
+      }
+    }
+  ]
+}
