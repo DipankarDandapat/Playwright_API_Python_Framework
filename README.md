@@ -11,8 +11,8 @@ Playwright_API_Python_Framework/
     │   ├── test_1_auth.py       
     │   ├── test_2_create_booking.py       
     │   ├── test_3_update_booking_by_ID.py       
-    │	  ├── test_4_get_booking_by_ID.py       
-    │	  ├── test_5_delete_booking_by_ID.py            
+    │	├── test_4_get_booking_by_ID.py       
+    │	├── test_5_delete_booking_by_ID.py            
     │   └── ...
     ├── testData/                   
     │   ├── createAuth.json      
@@ -25,9 +25,9 @@ Playwright_API_Python_Framework/
     │   ├── api_actions.py  
     │   ├── api_utilities.py  
     │   ├── api_validations.py  
-    │	  ├── file_reader.py  
+    │	├── file_reader.py  
     │   ├── logger_utility.py  
-    │	  ├── Shared_API_Data.py  
+    │	├── Shared_API_Data.py  
     │   └── ...
     ├── AutoLogs/
     ├── allure-results/
