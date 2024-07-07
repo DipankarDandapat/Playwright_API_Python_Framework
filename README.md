@@ -1,5 +1,58 @@
-# Playwright_API_Python_Framework
+<div style="display: flex;">
+    <a href="https://playwright.dev/">
+        <img alt="Playwright" src="https://www.lambdatest.com/resources/images/header/Playwright_logo.svg" width="250" style="margin-right: 100px;"/>
+    </a>
+    <a href="https://www.python.org/">
+        <img alt="Python" src="https://www.python.org/static/img/python-logo.png" width="200"/>
+    </a>
+     <a href="https://www.python.org/">
+        <img alt="Python" src="https://cdn.hashnode.com/res/hashnode/image/upload/v1657098680857/FoZEEuklb.png?auto=compress,format&format=webp" width="200" />
+    </a>
+</div>
+
+
+# Playwright API Python Framework
 This repository contains a comprehensive API testing framework built using Python and Playwright. The framework is designed to streamline your API testing process and provide detailed reports with Allure.
+
+### Initial Setup:
+- Install and configure [Python3](https://www.python.org/downloads/)
+- Setup your IDE (Preferably [Pycharm Community Edition](https://www.jetbrains.com/pycharm/download/#section=windows))
+- Import cloned repository as project
+- **Creating a virtual environment**.
+   Open a terminal, move to the directory where you wish to create the virtual environment, and run the following command to create the virtual environment:
+
+   Use `venv` (for Python 3.3+):
+
+   ```bash
+   python -m venv myenv
+   ```
+-  **Activate virtual environment**.
+   To start using the virtual environment, you need to activate it. The activation command is slightly different for different operating systems:
+
+   - on macOS and Linux:
+
+    ```bash
+     source myenv/bin/activate
+    ```
+
+   - On Windows (using Command Prompt):
+
+    ```bash
+     myenv\Scripts\activate
+    ```
+
+   - On Windows (using PowerShell):
+
+    ```bash
+     .\myenv\Scripts\Activate.ps1
+    ```
+ 
+   Once the virtual environment is activated, you will see the name of the virtual environment in front of the terminal prompt, indicating that you are in the virtual environment.
+
+  - Install all required packages using this command
+    ```sh
+    pip install -r requirements.txt
+    ``` 
 
 ## Project Structure
 
