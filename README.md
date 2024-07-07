@@ -110,7 +110,6 @@ Playwright_API_Python_Framework/
 - `validate_response_code`: Validates the API response code.
 - `validate_entire_response_body_data`: Compares the entire response body with expected data.
 - `validate_in_response_body`: Validates specific data in the response body using JSONPath.
-- `verify_equals`: Compares actual and expected results.
 - `validate_schema`: Validates the JSON response against a provided schema.
 
 #### file_reader.py
