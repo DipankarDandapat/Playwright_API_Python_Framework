@@ -33,3 +33,126 @@ pipeline {
         }
     }
 }
+
+###############################################################################################3
+
+pipeline {
+    agent any
+    
+    environment {   
+        VENV_DIR = 'venvAPI'
+    }
+    
+    stages {
+        
+        stage('Cleanup Workspace') {
+            steps {
+                // Clean workspace before build
+                cleanWs()
+                echo "Cleaned up workspace."
+            }
+        }
+        
+        stage('Verify Python & Pytest') {
+            steps {
+                bat '''
+                    echo "Checking Python version..."
+                    python --version
+                    
+                    echo "Checking pytest version..."
+                    %PYTHON_PATH% -m pytest --version
+
+                '''
+            }
+        }
+        
+          stage('Checkout') {
+            steps {
+                // Checkout code from Git
+               checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/DipankarDandapat/Playwright_API_Python_Framework.git']])
+                echo "Code checked out successfully."
+            }
+        }
+        
+         stage('Setup Environment') {
+            steps {
+                echo 'Setting up Python virtual environment...'
+                bat '''
+                    python -m venv %VENV_DIR%
+                    echo "Checking env activation..."
+                    call %VENV_DIR%\\Scripts\\activate.bat
+                '''
+            }
+        }
+        
+        stage('Install Dependencies') {
+            steps {
+                echo 'Installing dependencies from requirements.txt...'
+                bat '''
+                    call %VENV_DIR%\\Scripts\\activate.bat
+                    pip install -r requirements.txt
+                '''
+            }
+        }
+        
+
+        
+        stage('Run Tests') {
+            steps {
+                // Use script block for better error handling
+                script {
+                    try {
+                        bat '''
+
+                            echo "Running pip list..."
+                            call %VENV_DIR%\\Scripts\\activate.bat
+                            
+                            echo "Running tests..."
+                            python -m pytest testcases\\test_1_auth.py -s -v --cache-clear 
+                            
+                        '''
+                    } catch (Exception e) {
+                        error "Test execution failed: ${e.message}"
+                    }
+                }
+            }
+        }
+        
+        
+   }
+   
+   post {
+        always {
+            // Publish all HTML reports
+            publishHTML([
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'execution_reports',
+                reportFiles: '*.html',
+                reportName: 'Test Execution Reports',
+                reportTitles: 'Test Results'
+            ])
+            
+            // Archive the reports directory
+            archiveArtifacts(
+                artifacts: 'execution_reports/*.html',
+                fingerprint: true,
+                allowEmptyArchive: false,
+                onlyIfSuccessful: false
+            )
+        }
+        
+        success {
+            echo 'Pipeline completed successfully'
+        }
+        
+        failure {
+            echo 'Pipeline failed'
+        }
+    }
+
+
+}
+
+
