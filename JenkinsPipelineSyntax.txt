@@ -39,7 +39,20 @@ pipeline {
 pipeline {
     agent any
     
-    environment {   
+    triggers {
+      cron 'H/15 * * * *'
+    }
+
+    
+    parameters {
+        choice(name: 'ENVIRONMENT', choices: ['staging', 'preproduction', 'production'], description: 'Select the environment to run the tests')
+    }
+    
+    environment {
+        PROJECT_PATH = 'D:/Python_API_Framework'
+        PYTHON_PATH = 'C:/Users/Dipankar/anaconda3/envs/Python_API_Framework/python.exe'
+        ENV="${params.ENVIRONMENT}"
+        
         VENV_DIR = 'venvAPI'
     }
     
@@ -154,5 +167,9 @@ pipeline {
 
 
 }
+
+
+
+
 
 
