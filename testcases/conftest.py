@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 import pytest
-import pytest_html
+
 from playwright.sync_api import APIRequestContext, Playwright
 from typing import Generator
 import logging
