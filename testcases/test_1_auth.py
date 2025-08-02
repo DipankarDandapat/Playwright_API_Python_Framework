@@ -13,8 +13,6 @@ log = logger_utility.customLogger()
 
 # Load environment variables from .env file
 load_dotenv()
-# Get the base URL from environment variables
-baseURL = os.getenv('base_url')
 
 testcasedata = read_file('createAuth.json')
 
@@ -29,6 +27,8 @@ testcasedata = read_file('createAuth.json')
 @pytest.mark.Positive
 @pytest.mark.parametrize("case", testcasedata["positive"])
 def test_create_authToken_positive(api_request_context,case):
+    # Get the base URL from environment variables
+    baseURL = os.getenv('BASE_URL')
 
     response = post_request(api_request_context, base_url =baseURL, api_endpoint=case["endpoint"],payload=case["params"],header=case["headers"])
     validate_response_code(response, case["expected_status"])
@@ -45,6 +45,7 @@ def test_create_authToken_positive(api_request_context,case):
 @pytest.mark.negative
 @pytest.mark.parametrize("case", testcasedata["negative"])
 def test_create_authToken_negative(api_request_context,case):
+    baseURL = os.getenv('BASE_URL')
 
     response = post_request(api_request_context, base_url =baseURL, api_endpoint=case["endpoint"],payload=case["params"],header=case["headers"])
     validate_response_code(response, case["expected_status"])

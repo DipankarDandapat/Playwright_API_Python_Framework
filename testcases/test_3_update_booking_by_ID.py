@@ -16,8 +16,7 @@ log = logger_utility.customLogger()
 
 # Load environment variables from .env file
 load_dotenv()
-# Get the base URL from environment variables
-baseURL = os.getenv('base_url')
+
 
 testcasedata = read_file('updateBooking.json')
 
@@ -26,6 +25,8 @@ fake = Faker()
 
 @pytest.mark.parametrize("case", testcasedata["positive"])
 def test_update_booking_by_id(api_request_context,case):
+    # Get the base URL from environment variables
+    baseURL = os.getenv('BASE_URL')
 
     first_name=fake.first_name()
     last_name=fake.last_name()

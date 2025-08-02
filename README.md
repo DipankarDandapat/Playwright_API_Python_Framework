@@ -59,8 +59,7 @@ This repository contains a comprehensive API testing framework built using Pytho
 ```plaintext
 Playwright_API_Python_Framework/
     │
-    ├── testcases/  	
-    │   ├── conftest.py             
+    ├── testcases/  	          
     │   ├── test_1_auth.py       
     │   ├── test_2_create_booking.py       
     │   ├── test_3_update_booking_by_ID.py       
@@ -81,13 +80,16 @@ Playwright_API_Python_Framework/
     │	├── file_reader.py  
     │   ├── logger_utility.py  
     │	├── Shared_API_Data.py  
+    │	├── upload_file.py 
     │   └── ...
     ├── AutoLogs/
     ├── allure-results/
     ├── execution_reports/
     ├── pytest.ini              
     ├── requirements.txt  
-    ├── .env
+    ├── conftest.py  
+    ├── .env.staging
+    ├── .env.prod
 
 ```
 ## Key Functionalities
@@ -123,3 +125,47 @@ Playwright_API_Python_Framework/
 - `SharedData`: A dataclass for storing and retrieving shared data within the framework.
 - `set_data`: Sets a value for a given key in the shared data.
 - `get_data`: Retrieves the value associated with a given key.
+
+
+## Allure Report
+
+After running the tests, you can generate and view the Allure Report for detailed test results and analytics. 
+
+To generate the report, run:
+```bash
+allure generate allure-results --clean -o allure-report
+```
+
+To serve the report locally, run:
+```bash
+allure open allure-report
+```
+
+
+## Running Tests
+
+Tests can be executed against different environments (e.g., `staging`, `prod`) using the `--env` pytest flag. Ensure you have the corresponding `.env.<environment_name>` file in the project root.
+
+To run tests for a specific environment, use the following command:
+
+```bash
+pytest --env=<environment_name>
+```
+
+For example, to run tests against the `staging` environment with specific markers and caching cleared:
+
+```bash
+pytest testcases/ -s -v --cache-clear --env=staging -m Positive
+```
+For example, to run tests against the `prod` environment with specific markers and caching cleared:
+
+```bash
+pytest testcases/ -s -v --cache-clear --env=prod
+```
+
+
+
+
+![Allure Report Screenshot](testData/allure_report_screenshot.png)
+
+

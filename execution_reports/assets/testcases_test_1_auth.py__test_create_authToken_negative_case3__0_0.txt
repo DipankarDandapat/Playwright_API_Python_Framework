@@ -1,2 +1,0 @@
-Performing POST request to https://restful-booker.herokuapp.com/booking with payload: {} and headers: {'Content-Type': 'application/json'}
-API executed successfully and the response code: 500

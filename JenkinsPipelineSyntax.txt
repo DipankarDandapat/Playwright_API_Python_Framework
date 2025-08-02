@@ -1,40 +1,3 @@
-pipeline {
-    agent any
-
-    environment {
-        BASE_URL = ''
-    }
-
-    parameters {
-        choice(name: 'ENV', choices: ['staging', 'production'], description: 'Choose the environment to deploy to')
-    }
-
-    stages {
-        stage('Set Environment Variables') {
-            steps {
-                script {
-                    if (params.ENV == 'staging') {
-                        env.BASE_URL = 'https://restful-booker.herokuapp.com'
-                    } else if (params.ENV == 'production') {
-                        env.BASE_URL = 'https://restful-booker.herokuapp.com'
-                    }
-                }
-            }
-        }
-        stage('Install Dependencies') {
-            steps {
-                sh 'pip install -r requirements.txt'
-            }
-        }
-        stage('Run Tests') {
-            steps {
-                sh 'pytest'
-            }
-        }
-    }
-}
-
-###############################################################################################3
 
 pipeline {
     agent any
@@ -45,11 +8,11 @@ pipeline {
 
     
     parameters {
-        choice(name: 'ENVIRONMENT', choices: ['staging', 'preproduction', 'production'], description: 'Select the environment to run the tests')
+        choice(name: 'ENVIRONMENT', choices: ['staging','production'], description: 'Select the environment to run the tests')
     }
     
     environment {
-        PROJECT_PATH = 'D:/Python_API_Framework'
+        PROJECT_PATH = 'D:/Playwright_API_Python_Framework'
         PYTHON_PATH = 'C:/Users/Dipankar/anaconda3/envs/Python_API_Framework/python.exe'
         ENV="${params.ENVIRONMENT}"
         

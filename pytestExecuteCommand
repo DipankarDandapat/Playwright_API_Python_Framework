@@ -1,5 +1,10 @@
 pytest testcases\ -s -v --cache-clear
 
-pytest -m "Regression or Smoke or Positive"
+pytest testcases\ -s -v --cache-clear --env=staging
+
+pytest testcases\ -s -v --cache-clear --env=prod
+
+pytest testcases\ -s -v --cache-clear --env=staging -m Positive
+
 
 allure serve allure-results

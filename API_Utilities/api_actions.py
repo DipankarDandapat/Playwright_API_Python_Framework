@@ -25,7 +25,7 @@ def get_request(api_request_context, base_url, api_endpoint, query_params=None, 
         raise
 
 
-def post_request(api_request_context, base_url, api_endpoint, payload, header=None):
+def post_request(api_request_context, base_url, api_endpoint, payload, query_params=None, header=None,multipart=None):
     """
     Perform HTTP Post request with in-line body data
     :param api_request_context: The request context
@@ -37,9 +37,8 @@ def post_request(api_request_context, base_url, api_endpoint, payload, header=No
     """
     url = base_url + api_endpoint
     log.info(f"Performing POST request to {url} with payload: {payload} and headers: {header}")
-
     try:
-        response = api_request_context.post(url, data=payload, headers=header)
+        response =  api_request_context.post(url, data=payload, params=query_params, headers=header,multipart = multipart)
         return response
     except Exception as e:
         log.error(f"Error during POST request to {url}: {e}")
